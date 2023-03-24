@@ -12,7 +12,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class Board {
+public class Board extends BaseEntity{
 
     // key를 생성하는 방법
     // 1. IDENTITY : auto_increment 데이터베이스에 위임
@@ -30,5 +30,10 @@ public class Board {
     private String content;
 
     private String writer;
+
+    public void change(String title, String content){
+        this.title = title;
+        this.content = content;
+    }
 
 }
